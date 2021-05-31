@@ -1,0 +1,14 @@
+* {
+  margin: 0px;
+  font-family: "Oxygen", sans-serif;
+}
+
+main {
+  background: linear-gradient(89.73deg, #7b4397 0.26%, #dc2430 99.8%);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
