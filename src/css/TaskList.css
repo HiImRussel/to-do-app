@@ -12,3 +12,20 @@
   overflow-y: scroll;
   padding-right: 30px;
 }
+
+#options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+select {
+  border: 0px;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+select:focus {
+  outline: none;
+}
