@@ -1,0 +1,23 @@
+.task-description {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.582);
+  z-index: 5;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-description button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 3px 20px;
+  cursor: pointer;
+}

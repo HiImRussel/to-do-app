@@ -12,3 +12,19 @@ main {
   flex-direction: row;
   align-items: center;
 }
+
+::-webkit-scrollbar {
+  width: 13px;
+  height: 13px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.445);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.445);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}

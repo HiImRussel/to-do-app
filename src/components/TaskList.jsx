@@ -18,6 +18,7 @@ const TaskList = ({ tasks, deleteTask, completeTask }) => {
           id={task.id}
           name={task.name}
           important={task.important}
+          description={task.description}
           deleteTask={deleteTask}
           completeTask={completeTask}
         />
