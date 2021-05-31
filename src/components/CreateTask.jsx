@@ -1,13 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import "../css/Form.css";
 
-const CreateNewTask = () => {
+const CreateNewTask = ({ handler }) => {
   const [taskNameVelue, setTaskNameValue] = useState("");
   const [taskDescriptionVelue, setTaskDescriptionValue] = useState("");
   const [taskDate, setTaskDate] = useState("");
   const [isImportant, setIsImportant] = useState(false);
-  const [tasks, setTasks] = useState();
+
   const handleChange = (e) => {
     switch (e.target.name) {
       case "task-name":
@@ -29,24 +29,9 @@ const CreateNewTask = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newTask = {
-      id: Math.floor(Math.random() * 999999999999),
-      name: taskNameVelue,
-      description: taskDescriptionVelue,
-      date: taskDate,
-      important: isImportant,
-    };
-    const tasks_to_save = [...tasks, JSON.stringify(newTask)];
-
-    document.cookie = JSON.stringify(tasks_to_save);
-    setTasks((prevValue) => [...prevValue, newTask]);
+    handler(taskNameVelue, taskDescriptionVelue, taskDate, isImportant);
   };
 
-  useEffect(() => {
-    if (document.cookie.length > 0) {
-      setTasks(JSON.parse(document.cookie));
-    }
-  }, []);
   return (
     <div className="tasks-bg">
       <h3>Create new task</h3>

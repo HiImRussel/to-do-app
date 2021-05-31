@@ -1,0 +1,14 @@
+.tasks-list {
+  padding: 10px 20px;
+  background: radial-gradient(
+    55.2% 55.2% at 53.41% 44.8%,
+    rgba(255, 255, 255, 0.48) 0%,
+    rgba(255, 255, 255, 0.12) 100%
+  );
+  color: white;
+  border-radius: 15px;
+  width: 35vw;
+  max-height: 80vh;
+  overflow-y: scroll;
+  padding-right: 30px;
+}

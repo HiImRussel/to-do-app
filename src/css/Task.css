@@ -1,0 +1,25 @@
+.task {
+  width: 100%;
+  background-color: white;
+  color: black;
+  margin-top: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.buttons svg {
+  height: 2vw;
+  transition: all 0.2s ease-in-out;
+}
+
+.buttons svg:hover {
+  transform: scale(1.2);
+}
+
+.buttons svg:nth-child(1) {
+  margin-right: 10px;
+}

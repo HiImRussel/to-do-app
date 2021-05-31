@@ -8,6 +8,7 @@
   text-align: center;
   color: white;
   border-radius: 15px;
+  margin-right: 50px;
 }
 
 form input[type="text"] {
@@ -50,6 +51,7 @@ form button {
   color: white;
   border-radius: 8px;
   transition: all 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 form button:hover {
