@@ -21,6 +21,7 @@ const TaskList = ({ tasks, deleteTask, completeTask }) => {
           description={task.description}
           deleteTask={deleteTask}
           completeTask={completeTask}
+          status={filter}
         />
       );
     }

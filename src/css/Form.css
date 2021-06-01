@@ -57,3 +57,9 @@ form button {
 form button:hover {
   transform: scale(1.1);
 }
+
+@media only screen and (max-width: 679px) {
+  .tasks-bg {
+    margin-right: 0px;
+  }
+}

@@ -9,6 +9,7 @@
   flex-direction: row;
   justify-content: space-between;
   cursor: pointer;
+  align-items: center;
 }
 
 .buttons svg {
@@ -22,4 +23,10 @@
 
 .buttons svg:nth-child(1) {
   margin-right: 10px;
+}
+
+@media only screen and (max-width: 679px) {
+  .buttons svg {
+    height: 3vh;
+  }
 }
