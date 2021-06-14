@@ -21,9 +21,11 @@ const App = () => {
       important: isImportant,
       status: "new",
     };
-    const tasks_to_save = [...tasks, JSON.stringify(newTask)];
+    const tasks_to_save = [...tasks, newTask];
 
-    document.cookie = JSON.stringify(tasks_to_save);
+    document.cookie = `data=${JSON.stringify(
+      tasks_to_save
+    )}; expires=Thu, 18 Dec 3099 12:00:00 UTC`;
     setTasks((prevValue) => [...prevValue, newTask]);
   };
 
@@ -36,7 +38,9 @@ const App = () => {
       }
     });
     setTasks(new_tasks_list);
-    document.cookie = JSON.stringify(new_tasks_list);
+    document.cookie = `data=${JSON.stringify(
+      new_tasks_list
+    )}; expires=Thu, 18 Dec 3099 12:00:00 UTC`;
   };
 
   const completeTask = (id) => {
@@ -56,12 +60,16 @@ const App = () => {
       }
     });
     setTasks(newTaskList);
-    document.cookie = JSON.stringify(newTaskList);
+    document.cookie = `data=${JSON.stringify(
+      newTaskList
+    )}; expires=Thu, 18 Dec 3099 12:00:00 UTC`;
   };
 
   useEffect(() => {
     if (document.cookie.length > 0) {
-      setTasks(JSON.parse(document.cookie));
+      const taskskData = JSON.parse(document.cookie.split("=")[1]);
+      console.log(document.cookie.split("=")[1]);
+      setTasks(taskskData);
     }
   }, []);
 

@@ -11,6 +11,7 @@ const Task = ({
   deleteTask,
   completeTask,
   status,
+  date,
 }) => {
   const [isDescriptionVisable, setIsSecriptionVisable] = useState(false);
   const [displayDescription, setDescription] = useState("");
@@ -25,9 +26,18 @@ const Task = ({
       <div
         className="task"
         onClick={() => handleClick(description)}
-        style={important ? { backgroundColor: "#F6E39C" } : {}}
+        style={
+          important
+            ? {
+                backgroundColor: "#F6E39C",
+              }
+            : {}
+        }
       >
-        <span>{name}</span>
+        <div class="info">
+          <p>{date}</p>
+          <span>{name}</span>
+        </div>
         <div className="buttons">
           {status === "new" && (
             <svg

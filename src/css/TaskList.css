@@ -11,6 +11,7 @@
   max-height: 80vh;
   overflow-y: scroll;
   padding-right: 30px;
+  animation: slideList 0.3s ease-in-out;
 }
 
 #options {
@@ -38,5 +39,16 @@ select:focus {
   .tasks-list {
     width: 80%;
     max-height: 60vh;
+  }
+}
+
+@keyframes slideList {
+  from {
+    transform: translateX(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
   }
 }

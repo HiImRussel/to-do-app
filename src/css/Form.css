@@ -9,6 +9,7 @@
   color: white;
   border-radius: 15px;
   margin-right: 50px;
+  animation: slideForm 0.3s ease-in-out;
 }
 
 form input[type="text"] {
@@ -61,5 +62,16 @@ form button:hover {
 @media only screen and (max-width: 679px) {
   .tasks-bg {
     margin-right: 0px;
+  }
+}
+
+@keyframes slideForm {
+  from {
+    transform: translateX(-60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
   }
 }

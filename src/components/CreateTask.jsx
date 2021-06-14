@@ -4,8 +4,14 @@ import "../css/Form.css";
 
 const CreateNewTask = ({ handler }) => {
   const [taskNameVelue, setTaskNameValue] = useState("");
+  const [taskNameError, setTaskNameError] = useState(false);
+
   const [taskDescriptionVelue, setTaskDescriptionValue] = useState("");
+  const [taskDescriptionError, setTaskDescriptionError] = useState(false);
+
   const [taskDate, setTaskDate] = useState("");
+  const [taskDateError, setTaskDateError] = useState(false);
+
   const [isImportant, setIsImportant] = useState(false);
 
   const handleChange = (e) => {
@@ -29,7 +35,34 @@ const CreateNewTask = ({ handler }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handler(taskNameVelue, taskDescriptionVelue, taskDate, isImportant);
+    let validationError = false;
+    //name validation
+    if (taskNameVelue.length === 0) {
+      setTaskNameError(true);
+      validationError = true;
+    } else {
+      setTaskNameError(false);
+    }
+
+    //description validate
+    if (taskDescriptionVelue.length === 0) {
+      setTaskDescriptionError(true);
+      validationError = true;
+    } else {
+      setTaskDescriptionError(false);
+    }
+
+    //date validation
+    if (taskDate.length === 0) {
+      setTaskDateError(true);
+      validationError = true;
+    } else {
+      setTaskDateError(false);
+    }
+
+    if (validationError === false) {
+      handler(taskNameVelue, taskDescriptionVelue, taskDate, isImportant);
+    }
   };
 
   return (
@@ -43,6 +76,9 @@ const CreateNewTask = ({ handler }) => {
           value={taskNameVelue}
           onChange={handleChange}
         />
+        {taskNameError && (
+          <span style={{ color: "white" }}>This field is require</span>
+        )}
         <br />
         <input
           type="text"
@@ -51,6 +87,9 @@ const CreateNewTask = ({ handler }) => {
           value={taskDescriptionVelue}
           onChange={handleChange}
         />
+        {taskDescriptionError && (
+          <span style={{ color: "white" }}>This field is require</span>
+        )}
         <br />
         <input
           type="checkbox"
@@ -65,6 +104,12 @@ const CreateNewTask = ({ handler }) => {
           value={taskDate}
           onChange={handleChange}
         />
+        {taskDateError && (
+          <>
+            <br />
+            <span style={{ color: "white" }}>Please set date</span>
+          </>
+        )}
         <br />
         <button type="submit">CREATE</button>
       </form>

@@ -10,7 +10,7 @@ const TaskList = ({ tasks, deleteTask, completeTask }) => {
     setFilter(e.target.value);
   };
 
-  const display_tasks = tasks.map((task) => {
+  const display_tasks = tasks.reverse().map((task) => {
     if (task.status === filter) {
       return (
         <Task
@@ -22,6 +22,7 @@ const TaskList = ({ tasks, deleteTask, completeTask }) => {
           deleteTask={deleteTask}
           completeTask={completeTask}
           status={filter}
+          date={task.date}
         />
       );
     }
